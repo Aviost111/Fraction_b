@@ -55,7 +55,7 @@ namespace ariel {
 
         friend std::ostream &operator<<(std::ostream &osStream, const Fraction &fraction);
 
-        friend std::istream &operator>>(std::istream &input, Fraction fraction);
+        friend std::istream &operator>>(std::istream &input, Fraction &fraction);
 
         // prefix increment:
         Fraction &operator++();
@@ -68,7 +68,6 @@ namespace ariel {
 
         // postfix decrement:
         const Fraction operator--(int);
-
     };
 
 }
