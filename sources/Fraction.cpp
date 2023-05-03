@@ -116,25 +116,29 @@ namespace ariel {
     bool operator>(const Fraction &fraction1, const Fraction &fraction2) {
         int den1 = fraction1.getDenominator(), den2 = fraction2.getDenominator();
         int numa1 = fraction1.getNumerator(), numa2 = fraction2.getNumerator();
-        bool positive1, positive2;
-        if (((den1 < 0) && (numa1 < 0)) || ((den1 > 0) && (numa1 > 0))) {
-            positive1 = true;
-        } else {
-            positive1 = false;
-        }
-        if (((den2 < 0) && (numa2 < 0)) || ((den2 > 0) && (numa2 > 0))) {
-            positive2 = true;
-        } else {
-            positive2 = false;
-        }
-        int num1 = abs(numa1 * den2);
-        int num2 = abs(numa2 * den1);
-        if (!positive1) {
-            num1 = (-num1);
-        }
-        if (!positive2) {
-            num2 = (-num2);
-        }
+        double num1 =int((double(numa1)/den1)*1000);
+        num1=num1/1000;
+        double num2 =int((double(numa2)/den2)*1000);
+        num2=num2/1000;
+//        bool positive1, positive2;
+//        if (((den1 < 0) && (numa1 < 0)) || ((den1 > 0) && (numa1 > 0))) {
+//            positive1 = true;
+//        } else {
+//            positive1 = false;
+//        }
+//        if (((den2 < 0) && (numa2 < 0)) || ((den2 > 0) && (numa2 > 0))) {
+//            positive2 = true;
+//        } else {
+//            positive2 = false;
+//        }
+//        int num1 = abs(numa1 * den2);
+//        int num2 = abs(numa2 * den1);
+//        if (!positive1) {
+//            num1 = (-num1);
+//        }
+//        if (!positive2) {
+//            num2 = (-num2);
+//        }
         return (num1 > num2);
     }
 
